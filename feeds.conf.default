@@ -1,20 +1,9 @@
-#!/bin/bash
-# 刷新所有插件源，拉取最新源码
-./scripts/feeds update -a
-# 安装所有源的插件（基础必做）
-./scripts/feeds install -a
-
-# 安装SSR Plus+ 主插件+Luci界面+中文简体包
-./scripts/feeds install luci-app-ssr-plus
-./scripts/feeds install luci-i18n-ssr-plus-zh-cn
-
-# 安装PassWall2 主插件+Luci界面+中文简体包
-./scripts/feeds install luci-app-passwall2
-./scripts/feeds install luci-i18n-passwall2-zh-cn
-
-# 安装系统通用中文包，确保后台全中文显示
-./scripts/feeds install luci-i18n-base-zh-cn
-
-# 修复插件必备依赖，防止编译失败（新手必加）
-opkg update
-opkg install libustream-openssl curl ca-certificates
+# OpenWrt官方核心源（适配24.10.5，语法合规）
+src-git core https://github.com/openwrt/core.git
+src-git packages https://github.com/openwrt/packages.git
+src-git luci https://github.com/openwrt/luci.git
+src-git routing https://github.com/openwrt/routing.git
+src-git telephony https://github.com/openwrt/telephony.git
+# ssr plus+/passwall2 核心插件源（缺一不可，无需版本锁定）
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git small https://github.com/kenzok8/small
