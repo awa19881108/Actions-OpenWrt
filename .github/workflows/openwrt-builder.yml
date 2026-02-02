@@ -24,7 +24,8 @@ env:
   CONFIG_FILE: openwrt.config
   DIY_P1_SH: customize.sh
   TZ: Asia/Shanghai  # 新增：设置为中国上海时区，有效解决空时区报错
-
+  DIY_P2_SH: dummy.sh  # 新增：赋值为无效脚本名，仅让chmod有操作对象
+  
 jobs:
   build:
     runs-on: ubuntu-22.04
