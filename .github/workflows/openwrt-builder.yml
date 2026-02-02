@@ -23,7 +23,6 @@ env:
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: openwrt.config
   DIY_P1_SH: customize.sh
-  DIY_P2_SH: ""
   TZ: Asia/Shanghai  # 新增：设置为中国上海时区，有效解决空时区报错
 
 jobs:
